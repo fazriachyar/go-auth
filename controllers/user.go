@@ -52,6 +52,9 @@ func SignIn() echo.HandlerFunc {
 			return echo.NewHTTPError(http.StatusUnauthorized, "Token tidak sesuai")
 		}
 
-		return c.Redirect(http.StatusMovedPermanently, "/admin")
+		//userCookie, _ := c.Cookie("token")
+
+		 return c.Redirect(http.StatusMovedPermanently, "/admin")
+		//return c.String(http.StatusOK, fmt.Sprintf("%s", userCookie.Value))
 	}
 }
